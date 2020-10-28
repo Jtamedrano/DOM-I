@@ -114,7 +114,7 @@ mCPar.forEach((_, i) => (mCPar[i].innerText = mainPar[i]));
 const contactInfo = Object.values(siteContent.contact);
 qSS(".contact h4").innerText = contactInfo[0];
 const ctc = qSA(".contact p");
-ctc.forEach((_, i) => (ctc[i].innerHTML = contactInfo[i + 1]));
+ctc.forEach((_, i) => (ctc[i].innerText = contactInfo[i + 1]));
 
 // Footer
 
@@ -132,3 +132,22 @@ document.querySelector("nav").prepend(newMenuItemTwo);
 document.querySelector("nav").prepend(newMenuItemOne);
 navItems = qSA("nav a");
 navItems.forEach((e) => (e.style.color = "green"));
+
+const cta = qSS(".cta");
+cta.style.display = "block";
+
+cta.style.background = `url(${siteContent.cta["img-src"]}),rgba(255,255,255,0.8)`;
+cta.style.backgroundSize = "120%";
+cta.style.backgroundPosition = "center";
+cta.style.marginTop = "1em";
+cta.style.marginBottom = "1em";
+
+qSS("#cta-img").style.display = "none";
+
+const ctaText = qSS(".cta .cta-text");
+ctaText.style.background = `rgba(100,100,100,0.6)`;
+ctaText.style.marginRight = 0;
+ctaText.style.color = "#fff";
+ctaText.style.padding = "1em";
+ctaText.children[0].style.textShadow = "0 0 10px black";
+qSS(".main-content").style.marginTop = "unset";
