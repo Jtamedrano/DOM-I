@@ -119,3 +119,16 @@ ctc.forEach((_, i) => (ctc[i].innerHTML = contactInfo[i + 1]));
 // Footer
 
 qSS("footer p").innerText = siteContent.footer.copyright;
+
+// From: "Add new content"
+let newMenuItemOne = document.createElement("a");
+newMenuItemOne.href = "#";
+newMenuItemOne.innerText = "Home";
+let newMenuItemTwo = document.createElement("a");
+newMenuItemTwo.href = "#";
+newMenuItemTwo.innerText = "Pricing";
+
+document.querySelector("nav").prepend(newMenuItemTwo);
+document.querySelector("nav").prepend(newMenuItemOne);
+navItems = qSA("nav a");
+navItems.forEach((e) => (e.style.color = "green"));
